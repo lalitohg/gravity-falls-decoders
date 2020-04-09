@@ -1,0 +1,35 @@
+{
+  "name": "gravity-falls-decoders",
+  "version": "1.0.0",
+  "description": "TypeScript practice based on Gravity Falls TV show encryption puzzles",
+  "scripts": {
+    "test": "ts-mocha --color src/**/*.spec.ts",
+    "test:watch": "ts-mocha -w --watch-extensions ts src/**/*.spec.ts",
+    "build": "webpack --mode=production",
+    "watch": "webpack --mode=development --watch",
+    "dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalitohg/gravity-falls-decoders.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalitohg/gravity-falls-decoders/issues"
+  },
+  "homepage": "https://github.com/lalitohg/gravity-falls-decoders#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
