@@ -1,5 +1,5 @@
 import { A1Z26 } from './A1Z26';
-import { defaultAlphabet } from '../common'
+import { defaultAlphabet } from '../common';
 import { expect } from 'chai';
 
 describe('A1Z26 cipher module', () => {

@@ -1,6 +1,7 @@
-import { defaultAlphabet } from '../common'
+import { defaultAlphabet } from '../common';
+import { getRotateNTokenFromAlphabet } from '../common';
 
-const chooseToken = (index: number, alphabet: string[]): string => (index < alphabet.length - 3 ? alphabet[index + 3] : alphabet[index - (alphabet.length - 3)]);
+const chooseToken = (index: number, alphabet: string[]): string => getRotateNTokenFromAlphabet(index, alphabet, 3);
 
 const encryptMapReducer: any = (reducer: any, token: string, index: number, alphabet: string[]) => ({
     ...reducer,
