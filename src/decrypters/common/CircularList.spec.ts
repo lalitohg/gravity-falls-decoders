@@ -1,7 +1,7 @@
 import { CircularList } from './CircularList';
 import { expect } from 'chai';
 
-describe.only('Circular List', () => {
+describe('Circular List', () => {
     describe('Constructing new circular list', () => {
         it('Should build list with empty constructor', () => {
             const list = new CircularList();
@@ -23,7 +23,7 @@ describe.only('Circular List', () => {
             list.add(1);
             expect(list.elements.length).to.eql(1);
         });
-        it('Should add new element to an populated list', () => {
+        it('Should add new element to a populated list', () => {
             const list = CircularList.fromArray([1, 2]);
             list.add(3);
             expect(list.elements.length).to.eql(3);

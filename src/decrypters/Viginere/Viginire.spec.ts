@@ -45,28 +45,38 @@ describe('Viginere cipher module', () => {
         });
     });
 
-    // it('Should encrypt a string with no spaces', () => {
-    //     const cipher = new Viginere();
-    //     const encryptedString = cipher.encryptString('hola');
-    //     expect(encryptedString).to.eql('krod');
-    // });
+    describe('Passing invalid inputs', () => {
+        const cipher = new Viginere();
+        it('Should return empty string if no message is past to encrypt', () => {
+            expect(cipher.encryptString('', 'hola')).to.eql('');
+        });
+        it('Should return empty string if no key is past to encrypt', () => {
+            expect(cipher.encryptString('hola', '')).to.eql('');
+        });
+    });
 
-    // it('Should encrypt a string with spaces, punctiations and numbers', () => {
-    //     const cipher = new Viginere();
-    //     const encryptedString = cipher.encryptString('hola, 123. Hola');
-    //     expect(encryptedString).to.eql('krod, 123. krod');
-    // });
+    describe('Encrypting', () => {
+        const cipher = new Viginere();
 
-    // it('Should decrypt a string with no spaces', () => {
-    //     const cipher = new Viginere();
-    //     const decryptedString = cipher.decryptString('krod');
-    //     expect(decryptedString).to.eql('hola');
-    // });
+        it('Should encrypt "attack" with key "lemon" as "LXFOPV"', () => {
+            expect(cipher.encryptString('attack', 'lemon')).to.eql('lxfopv');
+        });
 
-    // it('Should decrypt a string with spaces, punctiations and numbers', () => {
-    //     const cipher = new Viginere();
-    //     const decryptedString = cipher.decryptString('krod, 123. krod');
-    //     expect(decryptedString).to.eql('hola, 123. hola');
-    // });
+        it('Should encrypt "attack at dawn" with key "lemon" as "LXFOPV EF RNHR"', () => {
+            expect(cipher.encryptString('attack at dawn', 'lemon')).to.eql('lxfopv ef rnhr');
+        });
+    });
+
+    describe('Decrypting', () => {
+        const cipher = new Viginere();
+
+        it('Should decrypt "LXFOPV" with key "lemon" as "attack"', () => {
+            expect(cipher.decryptString('LXFOPV', 'lemon')).to.eql('attack');
+        });
+
+        it('Should decrypt "LXFOPV EF RNHR" with key "lemon" as "attack at dawn"', () => {
+            expect(cipher.decryptString('LXFOPV EF RNHR', 'lemon')).to.eql('attack at dawn');
+        });
+    });
 });
 
