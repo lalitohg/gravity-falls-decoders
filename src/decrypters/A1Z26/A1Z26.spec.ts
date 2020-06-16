@@ -19,6 +19,7 @@ describe('A1Z26 cipher module', () => {
         const cipher = new A1Z26();
         const encryptMap = cipher.encryptMap;
         expect(encryptMap['a']).to.eql('1');
+        expect(encryptMap['m']).to.eql('13');
         expect(encryptMap['z']).to.eql('26');
     });
 
@@ -26,6 +27,7 @@ describe('A1Z26 cipher module', () => {
         const cipher = new A1Z26();
         const decryptMap = cipher.decryptMap;
         expect(decryptMap['1']).to.eql('a');
+        expect(decryptMap['13']).to.eql('m');
         expect(decryptMap['26']).to.eql('z');
     });
 
@@ -43,14 +45,14 @@ describe('A1Z26 cipher module', () => {
 
     it('Should decrypt a string with no spaces', () => {
         const cipher = new A1Z26();
-        const decryptedString = cipher.decryptString('1-2-3');
-        expect(decryptedString).to.eql('abc');
+        const decryptedString = cipher.decryptString('1-2-3-10');
+        expect(decryptedString).to.eql('abcj');
     });
 
     it('Should decrypt a string with spaces and punctiations', () => {
         const cipher = new A1Z26();
-        const decryptedString = cipher.decryptString('1-2-3. 1-2-3');
-        expect(decryptedString).to.eql('abc. abc');
+        const decryptedString = cipher.decryptString('1-2-3. 1-2-3, 1-2-3.');
+        expect(decryptedString).to.eql('abc. abc, abc.');
     });
 });
 
