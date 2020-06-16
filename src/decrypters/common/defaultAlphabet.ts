@@ -1,4 +1,4 @@
-export const defaultAlphabet = [
+export default [
     'a',
     'b',
     'c',

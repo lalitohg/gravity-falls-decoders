@@ -3,8 +3,10 @@ const path = require('path');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'gravity-falls-decoders.js',
+    library: 'gravityFallsDecoders',
+    libraryTarget:'var'
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],

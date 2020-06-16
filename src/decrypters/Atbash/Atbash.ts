@@ -1,27 +1,19 @@
 import { defaultAlphabet } from '../common';
-import { getRotateNTokenAtIndex } from '../common';
 
-const chooseToken = (index: number, alphabet: string[]): string => getRotateNTokenAtIndex(index, alphabet, 3);
-
-const encryptMapReducer: any = (reducer: any, token: string, index: number, alphabet: string[]) => ({
+const mapReducer = (reducer: any, token: string, index: number, alphabet: string[]) => ({
     ...reducer,
-    [token]: chooseToken(index, alphabet)
+    [token]: alphabet[alphabet.length - 1 - index]
 });
 
-const decryptMapReducer: any = (reducer: any, token: string, index: number, alphabet: string[]) => ({
-    ...reducer,
-    [chooseToken(index, alphabet)]: token
-});
-
-export class Caesar {
+export class Atbash {
     private _encryptMap: any;
     private _decryptMap: any;
     private _alphabet: string[];
 
     constructor(alphabet: string[] = defaultAlphabet) {
-        this._alphabet = alphabet.length > 3 ? alphabet.map(token => token.toLowerCase()) : defaultAlphabet;
-        this._encryptMap = this._alphabet.reduce(encryptMapReducer, {});
-        this._decryptMap = this._alphabet.reduce(decryptMapReducer, {});
+        this._alphabet = alphabet.map(token => token.toLowerCase());
+        this._encryptMap = this._alphabet.reduce(mapReducer, {});
+        this._decryptMap = [...this._alphabet].reverse().reduce(mapReducer, {});
     }
 
     get alphabet(): string[] {

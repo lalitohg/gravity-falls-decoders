@@ -2,6 +2,7 @@
   "name": "gravity-falls-decoders",
   "version": "1.0.0",
   "description": "TypeScript practice based on Gravity Falls TV show encryption puzzles",
+  "main": "dist/gravity-falls-decoders.js",
   "scripts": {
     "test": "ts-mocha --color src/**/*.spec.ts",
     "test:watch": "ts-mocha -w --watch-extensions ts src/**/*.spec.ts",

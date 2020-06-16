@@ -1,5 +1,11 @@
 import { Caesar } from './decrypters/Caesar';
+import { Atbash } from './decrypters/Atbash';
+import { A1Z26 } from './decrypters/A1Z26';
+import { Viginere } from './decrypters/Viginere';
 
-console.log('creating Caesar cipher');
-const caesarCipher = new Caesar();
-console.log('Created cipher with alphabet', caesarCipher.alphabet);
+export {
+    Caesar,
+    Atbash,
+    A1Z26,
+    Viginere
+}
