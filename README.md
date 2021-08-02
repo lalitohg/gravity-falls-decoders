@@ -16,3 +16,5 @@ Después de clonar e instalar el proyecto puedes ejectuar la versión de desarro
 ## Deploy
 
 El proyecto está directamente publicado por la configuración de Github pages en el repositorio.
+
+Para generar una nueva versión de la librería hay que ejecutar `npm run build`. Todo debería funcionar normalmente al hacer el merge de los cambios generados sobre la rama **master**.
