@@ -65,6 +65,10 @@ describe('Viginere cipher module', () => {
         it('Should encrypt "attack at dawn" with key "lemon" as "LXFOPV EF RNHR"', () => {
             expect(cipher.encryptString('attack at dawn', 'lemon')).to.eql('lxfopv ef rnhr');
         });
+
+        it('Should encrypt "attack at dawn" wiht key "LEMON" as "LXFOPV EF RNHR"', () => {
+            expect(cipher.encryptString('attack at dawn', 'lemon')).to.eql('lxfopv ef rnhr'); 
+        });
     });
 
     describe('Decrypting', () => {

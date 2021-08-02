@@ -63,7 +63,7 @@ export class Viginere {
             return '';
         }
         message = this.cleanMessage(message);
-        const keyList = CircularList.fromString(key);
+        const keyList = CircularList.fromString(key.toLocaleLowerCase());
         const encrypted = message.split('').map((token) => {
             if (this.alphabet.includes(token)) {
                 let keyValue = keyList.value;
@@ -80,7 +80,7 @@ export class Viginere {
             return '';
         }
         message = this.cleanMessage(message);
-        const keyList = CircularList.fromString(key);
+        const keyList = CircularList.fromString(key.toLocaleLowerCase());
         const decrypted = message.split('').map((token) => {
             if (this.alphabet.includes(token)) {
                 let keyValue = keyList.value;
