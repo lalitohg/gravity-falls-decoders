@@ -27,7 +27,7 @@
     "chai": "^4.3.4",
     "glob-parent": ">=5.1.2",
     "http-server": "^0.12.3",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "node-forge": ">=0.10.0",
     "serialize-javascript": "^6.0.0",
     "ssri": ">=8.0.1",
