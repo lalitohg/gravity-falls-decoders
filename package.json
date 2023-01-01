@@ -31,11 +31,11 @@
     "node-forge": ">=0.10.0",
     "serialize-javascript": "^6.0.0",
     "ssri": ">=8.0.1",
-    "ts-loader": "^6.2.2",
+    "ts-loader": "^9.4.2",
     "ts-mocha": "^8.0.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.10",
     "webpack": "^5.48.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^5.0.1"
   }
 }
